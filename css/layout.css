@@ -1,0 +1,123 @@
+/* 
+==========
+VARIABLES
+==========
+*/
+:root {
+  --clr-primary: rgb(202, 47, 16);
+}
+/* 
+==========
+RESET
+==========
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+.header-title {
+  background-color: var(--clr-primary);
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  padding: 0.25rem 0;
+}
+.navbar {
+  background-color: grey;
+}
+.nav-links {
+  padding: 0.5rem 1rem;
+  list-style: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+.nav-link a {
+  display: inline-block;
+  padding: 0.5rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.nav-link a:hover {
+  padding-left: 1rem;
+  background: var(--clr-primary);
+}
+.content {
+  padding: 1rem;
+}
+.social {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  background: var(--clr-primary);
+  padding: 0.5rem;
+  color: grey;
+}
+.social span {
+  transition: all 0.3s ease-in-out;
+}
+.social span:hover {
+  color: white;
+}
+
+footer h3 {
+  font-weight: 200;
+  text-transform: capitalize;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    grid-template-columns: [start] 200px [col-1-end] 1fr [col-2-end] 50px [end];
+    grid-template-rows: [start] auto [row-1-end] 1fr [row-2-end] auto [end];
+  }
+  header {
+    grid-column: start/end;
+    grid-row: start/row-1-end;
+  }
+  .nav-links {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .navbar {
+    grid-column: start/col-1-end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .content {
+    grid-column: col-1-end/col-2-end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .social {
+    grid-column: col-2-end/end;
+    grid-row: row-1-end/row-2-end;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  footer {
+    grid-column: start/end;
+    grid-row: row-2-end/end;
+  }
+}

@@ -1,0 +1,82 @@
+/* 
+==========
+VARIABLES
+==========
+*/
+:root {
+  --clr-primary: rgb(123, 36, 205);
+}
+
+/* 
+==========
+RESET
+==========
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+/* 
+==============
+GLOBAL CSS
+==============
+*/
+.nav-center {
+  width: 95vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+/* 
+==============
+NAVBAR
+==============
+*/
+.navbar {
+  background: var(--clr-primary);
+}
+.nav-links {
+  list-style-type: none;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+}
+.nav-link {
+  color: white;
+  font-size: 1.5rem;
+  display: inline-block;
+  align-self: center;
+  padding: 0.5rem 1.5rem;
+}
+
+.nav-link a {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  padding: 0.25rem 1.25rem;
+}
+.nav-link a:hover {
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  background: white;
+}
+@media screen and (min-width: 568px) {
+  .nav-center {
+    width: 90vw;
+    max-width: 1170px;
+  }
+  .nav-links {
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  }
+  .nav-link {
+    text-align: center;
+  }
+}
